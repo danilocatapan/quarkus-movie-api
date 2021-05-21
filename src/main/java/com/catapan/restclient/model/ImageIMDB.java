@@ -1,7 +1,4 @@
-
 package com.catapan.restclient.model;
-
-import javax.annotation.Generated;
 
 public class ImageIMDB {
 

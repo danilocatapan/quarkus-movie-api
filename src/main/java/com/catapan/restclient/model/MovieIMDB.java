@@ -1,23 +1,20 @@
-
 package com.catapan.restclient.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import javax.json.bind.annotation.JsonbProperty;
 
 public class MovieIMDB {
 
-    @JsonProperty("d")
     private List<DescriptionIMDB> DescriptionIMDBList;
 
-    @JsonProperty("q")
     private String query;
 
     public List<DescriptionIMDB> getDescriptionIMDBList() {
         return DescriptionIMDBList;
     }
 
-    public void setDescriptionIMDBList(
-        List<DescriptionIMDB> descriptionIMDBList) {
+    @JsonbProperty("d")
+    public void setDescriptionIMDBList(List<DescriptionIMDB> descriptionIMDBList) {
         DescriptionIMDBList = descriptionIMDBList;
     }
 
@@ -25,6 +22,7 @@ public class MovieIMDB {
         return query;
     }
 
+    @JsonbProperty("q")
     public void setQuery(String query) {
         this.query = query;
     }
