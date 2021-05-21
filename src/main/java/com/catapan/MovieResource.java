@@ -6,7 +6,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
 @Path("/hello-resteasy")
-public class GreetingResource {
+public class MovieResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
