@@ -36,12 +36,16 @@ public class MovieResource {
         return movieService.search(query);
     }
 
+    @Operation(summary = "Método para obter os filmes já pesquisados")
+    @Tag(name = "movie")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Movie> list() {
         return movieService.list();
     }
 
+    @Operation(summary = "Método para obter os filmes já pesquisados top 2000")
+    @Tag(name = "movie")
     @GET
     @Path("/listBestRated")
     @Produces(MediaType.APPLICATION_JSON)
