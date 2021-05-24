@@ -1,7 +1,9 @@
-package com.catapan;
+package com.catapan.resource;
 
+import com.catapan.model.Movie;
 import com.catapan.restclient.model.MovieIMDB;
 import com.catapan.service.MovieService;
+import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -32,5 +34,18 @@ public class MovieResource {
     @Produces(MediaType.APPLICATION_JSON)
     public MovieIMDB search(@PathParam("query") String query) {
         return movieService.search(query);
+    }
+
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Movie> list() {
+        return movieService.list();
+    }
+
+    @GET
+    @Path("/listBestRated")
+    @Produces(MediaType.APPLICATION_JSON)
+    public List<Movie> listBestRated(){
+        return movieService.listBestRated();
     }
 }
