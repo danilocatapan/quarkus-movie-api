@@ -44,11 +44,19 @@ public class MovieService {
         movieIMDB.getDescriptionIMDBList().forEach(m -> {
             Movie movieDatabase = movieRepository.findIMDBId(m.getIdIMDB());
 
-            if (movieDatabase == null) {
+            if (movieDatabase == null && m.getQualifier() != null) {
                 movies.add(new Movie(m));
             }
 
             movieRepository.persist(movies);
         });
+    }
+
+    public List<Movie> list() {
+        return movieRepository.list();
+    }
+
+    public List<Movie> listBestRated() {
+        return movieRepository.listBestRated();
     }
 }
